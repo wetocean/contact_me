@@ -60,4 +60,9 @@ The app uses Nodemailer with Gmail SMTP to send emails to `koolwebsites.com@gmai
 
 ## Deployment
 
-For production deployment, ensure environment variables are set in your hosting platform.
+🚀 **Auto-deployed to Vercel**: This project automatically deploys to Vercel when changes are pushed to the `master` branch.
+
+- **Production URL**: https://contact-42k86znfa-wetoceans-projects.vercel.app
+- **Dashboard**: https://vercel.com/wetoceans-projects/contact-me
+
+For production deployment, ensure environment variables are set in your hosting platform (Vercel Dashboard → Settings → Environment Variables).
