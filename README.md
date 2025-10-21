@@ -1,43 +1,63 @@
-# Astro Starter Kit: Minimal
+# Contact Me - Domain Purchase Inquiry Form
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+A clean, responsive contact form for handling domain purchase inquiries. Built with Astro + TypeScript.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
 
-## 🚀 Project Structure
+- 📝 Contact form with validation
+- 📧 Email notifications via Gmail SMTP
+- 🎨 Clean, responsive design
+- ⚡ Fast and lightweight (Astro)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Setup
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+2. **Configure email settings:**
+   - Copy `.env.example` to `.env`
+   - Set up Gmail App Password:
+     1. Go to [Google Account Settings](https://myaccount.google.com/apppasswords)
+     2. Generate a new App Password for "Mail"
+     3. Copy the 16-character password
+   - Update `.env` with your credentials:
+     ```
+     GMAIL_USER=koolwebsites.com@gmail.com
+     GMAIL_APP_PASSWORD=your-16-character-app-password
+     ```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+3. **Start development server:**
+   ```bash
+   pnpm dev
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Email Configuration
 
-## 🧞 Commands
+The app uses Nodemailer with Gmail SMTP to send emails to `koolwebsites.com@gmail.com`. You'll need:
 
-All commands are run from the root of the project, from a terminal:
+1. **Gmail App Password** (not your regular password)
+2. **Two-factor authentication** enabled on your Google account
+3. Environment variables set in `.env` file
+
+## Form Fields
+
+- **Domain Name** (required): The domain being offered for purchase
+- **Offer Price** (required): Price in USD
+- **Your Name** (required): Contact person's name  
+- **Your Email** (required): Contact email for reply
+- **Additional Notes** (optional): Extra details about the offer
+
+## Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| `pnpm install`            | Installs dependencies                            |
+| `pnpm dev`                | Starts local dev server at `localhost:4321`     |
+| `pnpm build`              | Build your production site to `./dist/`          |
+| `pnpm preview`            | Preview your build locally, before deploying     |
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+For production deployment, ensure environment variables are set in your hosting platform.
