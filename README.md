@@ -197,7 +197,7 @@ This template includes a footer link: **"Created with ❤️ by WetOcean.com"**
 - 💰 **Remove the link** by making a one-time donation of **$10+** (or more based on how useful you find this template)
 - 🙏 Keeping the link helps others discover this free template
 
-**Make a donation:** Visit [WetOcean.com](https://wetocean.com) to support this project.
+**Make a donation:** Contact us at [WetOcean.com](https://wetocean.com) or email im@wetocean.com to arrange a donation. (Proper donation platforms will be set up soon!)
 
 ### Need Custom Features?
 
