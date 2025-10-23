@@ -203,7 +203,7 @@ This template includes a footer link: **"Created with ❤️ by WetOcean.com"**
 
 If you need customization or have feature requests, contact us:
 - 🌐 **Website:** [WetOcean.com](https://wetocean.com)
-- 📧 **Email:** contact@wetocean.com
+- 📧 **Email:** im@wetocean.com
 
 We offer:
 - Custom form implementations
