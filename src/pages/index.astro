@@ -1,8 +1,11 @@
 ---
 const url = Astro.url;
 const domainParam = url.searchParams.get('domain');
+const envDomain = import.meta.env.DOMAIN_NAME;
 const currentHostname = url.hostname;
-const defaultDomain = domainParam || currentHostname;
+
+// Priority: query param > env variable > hostname
+const defaultDomain = domainParam || envDomain || currentHostname;
 ---
 
 <html lang="en">
@@ -131,12 +134,30 @@ const defaultDomain = domainParam || currentHostname;
 				display: inline-block;
 				margin-left: 0.5rem;
 			}
+			
+			.footer {
+				margin-top: 2rem;
+				padding-top: 1.5rem;
+				border-top: 1px solid #e1e8ed;
+				text-align: center;
+				color: #888;
+				font-size: 0.9rem;
+			}
+			
+			.footer a {
+				color: #3498db;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+			
+			.footer a:hover {
+				color: #2980b9;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<h1>Wet Ocean's Contact Form</h1>
-			<h2 style="color: #555; margin-bottom: 2rem; text-align: center; font-weight: 400;">Purchase Inquiry for {defaultDomain}</h2>
+			<h1>{defaultDomain} Contact Form</h1>
 			
 			<div id="messages"></div>
 			
@@ -150,21 +171,21 @@ const defaultDomain = domainParam || currentHostname;
 						required 
 						value={defaultDomain}
 						placeholder="example.com"
-						{domainParam ? 'readonly' : ''}
+						readonly={domainParam ? true : undefined}
 					/>
 				</div>
 				
 				<div class="form-group">
-					<label for="price">Offer Price (USD) <span class="required">*</span></label>
-					<input 
-						type="number" 
-						id="price" 
-						name="price" 
-						required 
-						min="1"
-						step="0.01"
-						placeholder="1000.00"
-					/>
+				<label for="price">Offer Price (USD) <span class="required">*</span></label>
+				<input 
+					type="number" 
+					id="price" 
+					name="price" 
+					required 
+					min="10"
+					step="10"
+					placeholder="1000"
+				/>
 				</div>
 				
 				<div class="form-group">
@@ -203,18 +224,23 @@ const defaultDomain = domainParam || currentHostname;
 					<span class="loading" id="loading">...</span>
 				</button>
 			</form>
+			
+			<div class="footer">
+				Created with ❤️ by <a href="https://wetocean.com" target="_blank" rel="noopener noreferrer">WetOcean.com</a>
+			</div>
 		</div>
 
-		<script>
-			const form = document.getElementById('contactForm') as HTMLFormElement;
-			const messagesDiv = document.getElementById('messages') as HTMLDivElement;
-			const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-			const loading = document.getElementById('loading') as HTMLSpanElement;
+	<script>
+		const form = document.getElementById('contactForm') as HTMLFormElement;
+		const messagesDiv = document.getElementById('messages') as HTMLDivElement;
+		const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+		const loading = document.getElementById('loading') as HTMLSpanElement;
 
-			function showMessage(message: string, isError: boolean = false) {
-				messagesDiv.innerHTML = `<div class="${isError ? 'error-message' : 'success-message'}">${message}</div>`;
-				messagesDiv.scrollIntoView({ behavior: 'smooth' });
-			}
+
+		function showMessage(message: string, isError: boolean = false) {
+			messagesDiv.innerHTML = `<div class="${isError ? 'error-message' : 'success-message'}">${message}</div>`;
+			messagesDiv.scrollIntoView({ behavior: 'smooth' });
+		}
 
 			form.addEventListener('submit', async (e) => {
 				e.preventDefault();
