@@ -1,7 +1,24 @@
-# Contact Me - Agent Change Log
+# ReachOut - Agent Change Log
 
 ## Change History
 (Newest first)
+
+### 2025-01-24 02:47 - chore: Rename project to ReachOut
+**Type:** chore  
+**Changed Files:** package.json, README.md, WARP.md, agents.md, src/pages/index.astro
+
+**What:** Renamed project from "Contact Me" to "ReachOut" across all documentation and package name  
+**Why:** Rebrand for a short, memorable, open-source-friendly project name  
+**How:** Updated package.json name field, documentation titles, and page meta title  
+**Impact:**
+- Breaking changes? No
+- Migration required? No
+- Rollback procedure: Revert commit
+
+**Related:**
+- No related issues or PRs
+
+---
 
 ### 2025-01-22 17:42 - docs: Initialize agents.md change log
 **Type:** docs  

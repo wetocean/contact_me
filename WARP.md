@@ -1,4 +1,4 @@
-# Contact Me - Project Rules
+# ReachOut - Project Rules
 
 ## Project Overview
 Domain purchase inquiry form built with Astro + TypeScript, deployed on Vercel. Uses Nodemailer with Gmail SMTP for email notifications.

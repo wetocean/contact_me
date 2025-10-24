@@ -1,4 +1,4 @@
-# Contact Me - Domain Purchase Inquiry Form
+# ReachOut - Domain Purchase Inquiry Form
 
 > Created with ❤️ by [Wet Ocean](https://wetocean.com)
 
@@ -21,7 +21,7 @@ A clean, responsive contact form for handling domain purchase inquiries. Built w
 
 ```bash
 git clone <your-repo-url>
-cd contact_me
+cd reachout
 pnpm install
 ```
 
